@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "notes-frontend",
   "private": true,
   "version": "0.0.0",
@@ -30,5 +31,25 @@
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
     "vite": "^4.4.5"
+=======
+  "name": "phonebook-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.2"
+>>>>>>> 3cb294b061b697ad97c2cf1146c1dfd62f93dce4
   }
 }
