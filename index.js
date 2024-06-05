@@ -22,11 +22,6 @@ app.use(morgan('tiny'))
 app.use(express.static('dist'))
 
 
-if (process.argv.length<3) {
-  console.log('give password as argument')
-  process.exit(1)
-}
-
 app.get('/', (request, response) => {
     response.send('<h1>Welcome to the Phonebook!</h1>')
 })
@@ -38,9 +33,12 @@ app.get('/api/persons', (request, response) => {
 })
 
 app.get('/info', (request, response) => {
-  let count = Object.keys(persons).length
+  
   const date = Date();
-  response.send('<p>Phonebook has info for ' + count + ' people</p><p><br /> ' + date + '</p>')
+  Person.find({}).then(persons => {
+    let count = Object.keys(persons).length
+    response.send('<p>Phonebook has info for ' + count + ' people</p><p><br /> ' + date + '</p>')
+  })
 })
 
 app.get('/api/persons/:id', (request, response, next) => {
